@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rock, Paper & Scissors</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="back">
+    <!--NAV-BAR-->
+    <nav class="navbar navbar-dark bg-dark navig">
+      <div class="container-fluid">
+        <a class="navbar-brand" style="color: rgb(255, 255, 255)"
+          >Rocks, Paper & Scissors</a
+        >
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <div class="container mt-5 text-center bord">
+      <div class="row boxbg">
+        <div class="col border text-center"><h1>Player 1</h1></div>
+        <div class="col border text-center"><h1>Computer</h1></div>
+      </div>
+      <!-- HAND SIGN TEXT-->
+      <div class="row">
+        <div class="col-6 text-center p-4">
+          <h3>CHOOSE YOUR HAND SIGN!</h3>
+        </div>
+        <div class="col-6 text-center p-4">
+          <h3>CHOOSE YOUR HAND SIGN!</h3>
+        </div>
+      </div>
+      <!--SELECT IMAGE-->
+      <div class="row">
+        <div
+          id="rock"
+          onclick="select(this.id)"
+          class="col-2 border text-center"
+        >
+          <img
+            src="Components/rock.png"
+            class="img-responsive m-3"
+            width="50%"
+            alt="..."
+          />
+        </div>
+        <div
+          id="paper"
+          onclick="select(this.id)"
+          class="col-2 border text-center"
+        >
+          <img
+            src="Components/paper.png"
+            class="img-responsive m-3"
+            width="50%"
+            alt="..."
+          />
+        </div>
+        <div
+          id="scissor"
+          onclick="select(this.id)"
+          class="col-2 border text-center"
+        >
+          <img
+            src="Components/scissor.png"
+            class="img-responsive m-3"
+            width="50%"
+            alt="..."
+          />
+        </div>
+        <div class="col-2 border text-center">
+          <img
+            src="Components/rock.png"
+            class="img-responsive m-3"
+            width="50%"
+            alt="..."
+          />
+        </div>
+        <div class="col-2 border text-center">
+          <img
+            src="Components/paper.png"
+            class="img-responsive m-3"
+            width="50%"
+            alt="..."
+          />
+        </div>
+        <div class="col-2 border text-center">
+          <img
+            src="Components/scissor.png"
+            class="img-responsive m-3"
+            width="50%"
+            alt="..."
+          />
+        </div>
+      </div>
+      <div id="btn-container" class="container">
+        <button
+          id="btn1"
+          type="submit"
+          onclick="confirm(), computer()"
+          class="btn btn-primary btn-lg m-5"
+        >
+          Confirm
+        </button>
+      </div>
+      <!--SELECTED IMAGE-->
+      <div class="row">
+        <div id="result1" class="col"><img /></div>
+
+        <div id="result2" class="col"><img /></div>
+      </div>
+      <div id="displayResult" class="row"><h1></h1></div>
+      <div id="" class="row">
+        <div id="playerScore" class="col-6 border boxbg">
+          <h2 id="tempText">Player Score: 0</h2>
+        </div>
+        <div id="computerScore" class="col-6 border boxbg">
+          <h2 id="tempText1">Computer Score: 0</h2>
+        </div>
+      </div>
+    </div>
+
+    <script src="Paper-Scissor.js"></script>
+  </body>
+  <style>
+    img:hover {
+      cursor: pointer;
+    }
+
+    .back {
+      background-repeat: no-repeat;
+      background-color: #181818;
+      color: white;
+      background-attachment: fixed;
+    }
+
+    button:hover {
+      transition: transform 0.2s;
+      transform: scale(1.2);
+    }
+
+    .fullBorder {
+      box-shadow: inset 2px 4px 16px 0px rgba(0, 255, 255, 0.7);
+    }
+
+    .bord {
+      box-shadow: 0px 5px 10px 0px rgba(0, 255, 255, 0.7);
+      animation: blink 3s infinite;
+    }
+    @keyframes blink {
+      0% {
+        box-shadow: 0px 5px 10px 0px rgba(0, 255, 255, 0.7);
+      }
+      25% {
+        box-shadow: 0px 5px 10px 0px rgba(0, 38, 255, 0.7);
+      }
+      50% {
+        box-shadow: 0px 5px 10px 0px rgba(255, 0, 119, 0.7);
+      }
+      75% {
+        box-shadow: 0px 5px 10px 0px rgba(145, 255, 0, 0.7);
+      }
+    }
+
+    .navig {
+      box-shadow: 0px 5px 10px 0px rgba(0, 255, 255, 0.7);
+      animation: blink 4s infinite;
+    }
+    .boxbg {
+      background-color: #282828;
+    }
+  </style>
+</html>
