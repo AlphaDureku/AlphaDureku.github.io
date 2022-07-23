@@ -3,7 +3,7 @@ let player = 0;
 let PC = 0;
 let playerScore = 0;
 let computerScore = 0;
-let winner = 2;
+let winner = 5;
 
 function select(id) {
   let myID = document.getElementById(id);
