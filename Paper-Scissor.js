@@ -53,7 +53,7 @@ function confirm() {
 
 //Computer Image
 function computer() {
-  let random = Math.floor(Math.random() * 2);
+  let random = Math.floor(Math.random() * 3);
 
   if (random == 0) {
     const img = document.createElement("img");
